@@ -1,12 +1,11 @@
-import React from "react";
 import styles from "./Header.module.css";
-import images from "../UI/Images/meals.jpg";
+import images from "../../assets/meals.jpg";
 
 const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <h2>ReactMeals</h2>
+        <h1>ReactMeals</h1>
       </header>
       <div className={`${styles["main-image"]}`}>
         <img src={images} alt="meal table" />
