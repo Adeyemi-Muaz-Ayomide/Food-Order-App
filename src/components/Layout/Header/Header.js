@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import images from "../../assets/meals.jpg";
+import images from "../../../assets/meals.jpg";
 
 const Header = () => {
   return (
