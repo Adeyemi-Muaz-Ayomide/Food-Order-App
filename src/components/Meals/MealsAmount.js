@@ -1,11 +1,15 @@
+import Button from "../UI/Button/Button";
+import Input from '../UI/Input/Input'
+import styles from "./MealsAmount.module.css";
 
 const MealsAmount = () => {
   return (
-    <div>
-        <h3>Amount</h3>
-        <input type="number" min='0' max='40' step='1' />
-    </div>
-  )
-}
+    <form className={styles.form}>
+      
+      <Input type="number" min="0" max="5" step="1" label='Amount'/>
+      <Button>+Add</Button>
+    </form>
+  );
+};
 
-export default MealsAmount
+export default MealsAmount;

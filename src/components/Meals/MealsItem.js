@@ -1,3 +1,4 @@
+import MealsAmount from "./MealsAmount";
 import styles from "./MealsItem.module.css";
 
 const MealsItem = ({ mealItem }) => {
@@ -7,11 +8,11 @@ const MealsItem = ({ mealItem }) => {
         <li className={styles.meal} key={meal.id}>
           <div>
             <h3>{meal.name}</h3>
-            <p className={styles.description}>{meal.description}</p>
-            <p className={styles.price}>{meal.price}</p>
+            <div className={styles.description}>{meal.description}</div>
+            <div className={styles.price}>${meal.price}</div>
           </div>
           <div>
-            Amount
+            <MealsAmount />
           </div>
         </li>
       ))}
