@@ -1,9 +1,15 @@
-import styles from './Button.module.css'
+import styles from './Button.module.css';
 
 const Button = (props) => {
   return (
-    <button className={styles.button}>{props.children}</button>
-  )
-}
+    <button
+      className={styles.button}
+      type={props.type || 'button'}
+      onClick={props.onClick}
+    >
+      {props.children}
+    </button>
+  );
+};
 
-export default Button
+export default Button;

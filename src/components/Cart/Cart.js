@@ -1,5 +1,7 @@
 // import HeaderCartButton from "../Layout/Header/HeaderCartButton";
+import Button from "../UI/Button/Button";
 import styles from "./Cart.module.css";
+
 
 const Cart = () => {
   return (
@@ -13,7 +15,7 @@ const Cart = () => {
           <p>Your cart is empty</p>
           {/* Display items in the cart here, if any */}
           {/* <CartItem /> */}
-          <button>Remove Item</button>
+          <Button>Remove Item</Button>
         </body>
         <footer className={styles.footer}>
           <div>
@@ -22,8 +24,8 @@ const Cart = () => {
             {/* <h2>$ 0.00</h2> */}
           </div>
           <div>
-            <button>Checkout</button>
-            <button>Remove all</button>
+            <Button>Checkout</Button>
+            <Button>Remove all</Button>
           </div>
         </footer>
       </div>
