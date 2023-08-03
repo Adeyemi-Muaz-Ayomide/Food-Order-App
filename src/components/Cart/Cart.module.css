@@ -13,6 +13,9 @@
   width: 100%;
   max-width: 1200px;
 }
+h3 {
+  color: white;
+}
 
 /* const Logo = styled.img`
   width: 50px;
@@ -39,7 +42,7 @@ button {
   font-size: 1rem;
   cursor: pointer;
   margin-top: 1rem;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 .footer {
   display: flex;
@@ -49,4 +52,31 @@ button {
   padding: 1rem 2rem;
   width: 100%;
   max-width: 1200px;
+}
+
+/* Media query for devices with a maximum width of 768px (e.g., tablets) */
+@media only screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* Media query for devices with a maximum width of 576px (e.g., mobile phones) */
+@media only screen and (max-width: 576px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .footer {
+    padding: 1rem;
+  }
+  button {
+    margin-right: 0.5rem;
+  }
 }
