@@ -16,3 +16,9 @@
   font-size: 2rem;
   margin-top: 0;
 }
+
+.info p {
+  color: white;
+  font-size: 18px;
+  font-style: italic;
+}
