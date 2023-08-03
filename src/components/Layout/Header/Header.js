@@ -8,7 +8,7 @@ const Header = () => {
     <>
       <header className={styles.header}>
         <h1>ReactMeals</h1>
-        <Link to={"/cart"}>
+        <Link to={"/cart"} style={{ textDecoration: "none" }}>
           <HeaderCartButton />
         </Link>
       </header>

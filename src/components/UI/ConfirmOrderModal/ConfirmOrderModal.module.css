@@ -12,14 +12,14 @@
   position: fixed;
   top: 30vh;
   left: 10%;
-  width: 80%;
+  width: 30%;
   z-index: 100;
   overflow: hidden;
 }
 
 .header {
-  background: #4f005f;
-  padding: 1rem;
+  background: #8a2b06;;
+  padding: .8rem;
 }
 
 .header h2 {

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Card from './Card';
-import styles from './ErrorModal.module.css';
+import Card from '../Card/Card';
+import styles from './ConfirmOrderModal.module.css';
+import Button from '../Button/Button';
 
 const Backdrop = (props) => {
   return <div className={styles.backdrop} onClick={props.onConfirm} />;
@@ -11,10 +12,10 @@ const ModalOverlay = (props) => {
   return (
     <Card className={styles.modal}>
       <header className={styles.header}>
-        <h2>{props.title}</h2>
+        <h2>Order Confirmed</h2>
       </header>
       <div className={styles.content}>
-        <p>{props.message}</p>
+        <p>Your order has been confirmed. Delivered in 5 minutes</p>
       </div>
       <footer className={styles.actions}>
         <button onClick={props.onConfirm}>Okay</button>
@@ -23,23 +24,21 @@ const ModalOverlay = (props) => {
   );
 };
 
-const ErrorModal = (props) => {
+const ConfirmOrderModal = (props) => {
   return (
-    <React.Fragment>
+    <>
       {ReactDOM.createPortal(
         <Backdrop onConfirm={props.onConfirm} />,
         document.getElementById('backdrop-root')
       )}
       {ReactDOM.createPortal(
         <ModalOverlay
-          title={props.title}
-          message={props.message}
           onConfirm={props.onConfirm}
         />,
         document.getElementById('overlay-root')
       )}
-    </React.Fragment>
+    </>
   );
 };
 
-export default ErrorModal;
+export default ConfirmOrderModal;
