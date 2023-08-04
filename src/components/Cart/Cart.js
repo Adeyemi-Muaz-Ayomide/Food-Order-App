@@ -2,7 +2,7 @@
 import styles from "./Cart.module.css";
 import ConfirmOrderModal from "../UI/ConfirmOrderModal/ConfirmOrderModal";
 import { useState } from "react";
-import CartIcon from "./CartIcon";
+// import CartIcon from "./CartIcon";
 
 
 

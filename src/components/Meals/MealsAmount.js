@@ -1,15 +1,14 @@
-import { isDisabled } from "@testing-library/user-event/dist/utils";
-import Button from "../UI/Button/Button";
+// import { isDisabled } from "@testing-library/user-event/dist/utils";
 import Input from "../UI/Input/Input";
 import styles from "./MealsAmount.module.css";
-import { useState } from "react";
+// import { useState } from "react";
 
 const MealsAmount = ({ addToCart }) => {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   // const increment = (e) => {
   //   e.preventDefault();
-  //   setCount(count + 1);
+  //   setCount((prevCount) => prevCount + 1);
   // };
   // const decrement = (e) => {
   //   e.preventDefault();
@@ -19,8 +18,7 @@ const MealsAmount = ({ addToCart }) => {
   // const isButtonDisabled = count <= 0;
   return (
     <form className={styles.form}>
-      <Input type="number" min="0" max="5" step="1" label="Quantity" />
-      <Button>+Add</Button>
+      <Input />
       {/* <Input type="number" min="0" max="5" step="1" label="Amount" />
       <Button>+Add</Button> */}
       {/* <div className={styles.counter}>

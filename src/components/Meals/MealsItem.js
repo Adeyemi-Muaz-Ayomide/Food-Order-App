@@ -1,13 +1,15 @@
 import MealsAmount from "./MealsAmount";
 import styles from "./MealsItem.module.css";
-import {useState} from 'react'
+import { useState } from "react";
 
 const MealsItem = ({ mealItem }) => {
-  const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState([]);
 
   const addToMealCart = (cartProduct, e) => {
-    e.preventDefault()
-    const cartItemsIndex = cartItems.value.findIndex(meal => meal.id === cartProduct.id);
+    e.preventDefault();
+    const cartItemsIndex = cartItems.value.findIndex(
+      (meal) => meal.id === cartProduct.id
+    );
 
     if (cartItemsIndex !== -1) {
       setCartItems.value[cartItemsIndex].count++;
@@ -15,11 +17,10 @@ const MealsItem = ({ mealItem }) => {
       const newItem = { ...cartProduct, count: 1 };
       setCartItems.value.push(newItem);
     }
-    localStorage.setItem('shoppingcart', JSON.stringify(setCartItems.value));
-  }
+    localStorage.setItem("shoppingcart", JSON.stringify(setCartItems.value));
+  };
   return (
     <>
-
       {mealItem.map((meal) => (
         <li className={styles.meal} key={meal.id}>
           <div>
@@ -28,11 +29,10 @@ const MealsItem = ({ mealItem }) => {
             <div className={styles.price}>${meal.price}</div>
           </div>
           <div>
-            <MealsAmount addToCart={addToMealCart}/>
+            <MealsAmount addToCart={addToMealCart} />
           </div>
         </li>
       ))}
-
     </>
   );
 };

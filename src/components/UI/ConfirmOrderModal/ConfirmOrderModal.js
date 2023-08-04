@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from '../Card/Card';
 import styles from './ConfirmOrderModal.module.css';
-import Button from '../Button/Button';
+
 
 const Backdrop = (props) => {
   return <div className={styles.backdrop} onClick={props.onConfirm} />;
