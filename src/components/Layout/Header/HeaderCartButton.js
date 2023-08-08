@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import CartIcon from "../../Cart/CartIcon";
 import styles from "./HeaderCartButton.module.css";
-import { countContext } from "../../Meals/MealsAmount";
+import { countContext } from "../../../App";
 
 const HeaderCartButton = () => {
   const count = useContext(countContext);
+
   return (
     <button className={styles.button}>
       <span className={styles.icon}>

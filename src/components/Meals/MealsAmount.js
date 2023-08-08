@@ -1,34 +1,20 @@
-import { useState, createContext } from "react";
+import { useContext } from "react";
 import Input from "../UI/Input/Input";
 import styles from "./MealsAmount.module.css";
+import { countContext, decrementContext, incrementContext } from "../../App";
 
-export const countContext = createContext();
 const MealsAmount = () => {
-  const [count, setCount] = useState(0);
+  const count = useContext(countContext);
+  const incrementHandler = useContext(incrementContext);
+  const decrementHandler = useContext(decrementContext);
 
-  const incrementHandler = (e) => {
-    e.preventDefault();
-    if (count < 10) {
-      setCount((prevCount) => prevCount + 1);
-      return;
-    }
-  };
-  const decrementHandler = (e) => {
-    e.preventDefault();
-    if (count > 0) {
-      setCount((prevCount) => prevCount - 1);
-      return;
-    }
-  };
   return (
     <form className={styles.form}>
-      <countContext.Provider value={count}>
-        <Input
-          count={count}
-          incrementHandler={incrementHandler}
-          decrementHandler={decrementHandler}
-        />
-      </countContext.Provider>
+      <Input
+        count={count}
+        incrementHandler={incrementHandler}
+        decrementHandler={decrementHandler}
+      />
     </form>
   );
 };
