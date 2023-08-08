@@ -1,13 +1,6 @@
-import { useContext} from "react";
 import styles from "./Input.module.css";
-import { countContext, decrementContext, incrementContext } from "../../../App";
 
-const Input = () => {
-  const count = useContext(countContext);
-  const incrementHandler = useContext(incrementContext);
-  const decrementHandler = useContext(decrementContext);
-
-
+const Input = ({ count, incrementHandler, decrementHandler }) => {
   
   return (
     <>
@@ -17,7 +10,7 @@ const Input = () => {
           type="number"
           min={0}
           max={10}
-          step='1'
+          step="1"
           value={count}
           onChange={incrementHandler}
         />

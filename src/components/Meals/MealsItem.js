@@ -1,24 +1,9 @@
+// import Input from "../UI/Input/Input";
+// import Input from "../UI/Input/Input";
 import MealsAmount from "./MealsAmount";
 import styles from "./MealsItem.module.css";
-import { useState } from "react";
 
 const MealsItem = ({ mealItem }) => {
-  const [cartItems, setCartItems] = useState([]);
-
-  const addToMealCart = (cartProduct, e) => {
-    e.preventDefault();
-    const cartItemsIndex = cartItems.value.findIndex(
-      (meal) => meal.id === cartProduct.id
-    );
-
-    if (cartItemsIndex !== -1) {
-      setCartItems.value[cartItemsIndex].count++;
-    } else {
-      const newItem = { ...cartProduct, count: 1 };
-      setCartItems.value.push(newItem);
-    }
-    localStorage.setItem("shoppingcart", JSON.stringify(setCartItems.value));
-  };
   return (
     <>
       {mealItem.map((meal) => (
@@ -29,7 +14,8 @@ const MealsItem = ({ mealItem }) => {
             <div className={styles.price}>${meal.price}</div>
           </div>
           <div>
-            <MealsAmount addToCart={addToMealCart} />
+            <MealsAmount />
+            {/* <Input /> */}
           </div>
         </li>
       ))}

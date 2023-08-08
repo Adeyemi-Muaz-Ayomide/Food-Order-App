@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import CartIcon from "../../Cart/CartIcon";
 import styles from "./HeaderCartButton.module.css";
-import { countContext } from "../../../App";
+import { countContext } from "../../Meals/MealsAmount";
 
 const HeaderCartButton = () => {
   const count = useContext(countContext);
