@@ -1,7 +1,15 @@
+import { countContext, decrementContext, incrementContext } from "../../../App";
 import styles from "./Input.module.css";
+// import { countContext, decrementContext, incrementContext } from "../../App";
 
-const Input = ({ count, incrementHandler, decrementHandler }) => {
+import { useContext } from "react";
+
+const Input = () => {
+  const count = useContext(countContext);
+  const incrementHandler = useContext(incrementContext);
+  const decrementHandler = useContext(decrementContext);
   
+
   return (
     <>
       <div className={styles.input}>

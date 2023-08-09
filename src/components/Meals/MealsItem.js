@@ -1,12 +1,14 @@
-// import Input from "../UI/Input/Input";
-// import Input from "../UI/Input/Input";
-import MealsAmount from "./MealsAmount";
+import { useContext } from "react";
+import Input from "../UI/Input/Input";
 import styles from "./MealsItem.module.css";
+import { mealsContext } from "../../App";
 
-const MealsItem = ({ mealItem }) => {
+
+const MealsItem = () => {
+  const meals = useContext(mealsContext);
   return (
     <>
-      {mealItem.map((meal) => (
+      {meals.map((meal) => (
         <li className={styles.meal} key={meal.id}>
           <div>
             <h3>{meal.name}</h3>
@@ -14,8 +16,7 @@ const MealsItem = ({ mealItem }) => {
             <div className={styles.price}>${meal.price}</div>
           </div>
           <div>
-            <MealsAmount />
-            {/* <Input /> */}
+            <Input id={meal.id} meal={meal}/>
           </div>
         </li>
       ))}
@@ -24,3 +25,4 @@ const MealsItem = ({ mealItem }) => {
 };
 
 export default MealsItem;
+ 
