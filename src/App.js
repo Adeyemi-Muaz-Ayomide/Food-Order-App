@@ -41,14 +41,6 @@ const mealData = [
 
 const App = () => {
   const [meals, setMeals] = useState(mealData);
-
-  // const markTaskComplete = (id) => {
-  //   console.log(id)
-  //  const updatedTask = tasks.map((task) => task.id ===id?
-  //  {...task,  completed: !task.completed}: task)
-  //  setTasks(updatedTask)
-  // };
-
   const incrementHandler = (id) => {
     setMeals((prevMeals) => {
       return prevMeals.map((meal) =>
@@ -72,7 +64,6 @@ const App = () => {
   return (
     <div className="App">
       <mealsContext.Provider value={meals}>
-        {/* <countContext.Provider value={count}> */}
         <incrementContext.Provider value={incrementHandler}>
           <decrementContext.Provider value={decrementHandler}>
             <Header />
@@ -80,7 +71,6 @@ const App = () => {
             <Meals />
           </decrementContext.Provider>
         </incrementContext.Provider>
-        {/* </countContext.Provider> */}
       </mealsContext.Provider>
     </div>
   );
