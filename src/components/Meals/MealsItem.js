@@ -16,7 +16,7 @@ const MealsItem = () => {
             <div className={styles.description}>{meal.description}</div>
             <div className={styles.price}>${meal.price}</div>
           </div>
-          <div>
+          <div className={styles.form}>
             <Input
               meal={meal}
               key={meal.id}

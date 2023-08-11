@@ -1,4 +1,5 @@
 import styles from "./Input.module.css";
+
 const Input = ({ meal, incrementHandler, decrementHandler }) => {
   return (
     <>

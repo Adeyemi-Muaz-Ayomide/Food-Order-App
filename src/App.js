@@ -3,7 +3,6 @@ import Header from "./components/Layout/Header/Header";
 import InfoStore from "./components/Layout/InfoStore/InfoStore";
 import Meals from "./components/Meals/Meals";
 
-export const countContext = createContext();
 export const incrementContext = createContext();
 export const decrementContext = createContext();
 export const mealsContext = createContext();

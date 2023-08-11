@@ -1,18 +1,14 @@
-import { useContext } from "react";
 import CartIcon from "../../Cart/CartIcon";
 import styles from "./HeaderCartButton.module.css";
-import { countContext } from "../../../App";
 
-const HeaderCartButton = () => {
-  const count = useContext(countContext);
-
+const HeaderCartButton = ({ totalCount }) => {
   return (
     <button className={styles.button}>
       <span className={styles.icon}>
         <CartIcon />
       </span>
       <span>Your Cart</span>
-      <span className={styles.badge}>{count}</span>
+      <span className={styles.badge}>{totalCount}</span>
     </button>
   );
 };
