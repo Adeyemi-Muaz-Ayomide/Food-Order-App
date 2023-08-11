@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import Input from "../UI/Input/Input";
 import styles from "./MealsItem.module.css";
-import { mealsContext } from "../../App";
-
+import { decrementContext, incrementContext, mealsContext } from "../../App";
 
 const MealsItem = () => {
   const meals = useContext(mealsContext);
+  const incrementHandler = useContext(incrementContext);
+  const decrementHandler = useContext(decrementContext);
   return (
     <>
       {meals.map((meal) => (
@@ -16,7 +17,12 @@ const MealsItem = () => {
             <div className={styles.price}>${meal.price}</div>
           </div>
           <div>
-            <Input id={meal.id} meal={meal}/>
+            <Input
+              meal={meal}
+              key={meal.id}
+              incrementHandler={incrementHandler}
+              decrementHandler={decrementHandler}
+            />
           </div>
         </li>
       ))}
@@ -25,4 +31,3 @@ const MealsItem = () => {
 };
 
 export default MealsItem;
- 

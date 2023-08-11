@@ -1,15 +1,5 @@
-import { countContext, decrementContext, incrementContext } from "../../../App";
 import styles from "./Input.module.css";
-// import { countContext, decrementContext, incrementContext } from "../../App";
-
-import { useContext } from "react";
-
-const Input = () => {
-  const count = useContext(countContext);
-  const incrementHandler = useContext(incrementContext);
-  const decrementHandler = useContext(decrementContext);
-  
-
+const Input = ({ meal, incrementHandler, decrementHandler }) => {
   return (
     <>
       <div className={styles.input}>
@@ -19,14 +9,20 @@ const Input = () => {
           min={0}
           max={10}
           step="1"
-          value={count}
-          onChange={incrementHandler}
+          value={meal.count}
+          onChange={() => incrementHandler(meal.id)}
         />
       </div>
-      <button className={styles.button} onClick={incrementHandler}>
+      <button
+        className={styles.button}
+        onClick={() => incrementHandler(meal.id)}
+      >
         +
       </button>
-      <button className={styles.button} onClick={decrementHandler}>
+      <button
+        className={styles.button}
+        onClick={() => decrementHandler(meal.id)}
+      >
         -
       </button>
     </>

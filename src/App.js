@@ -8,60 +8,69 @@ export const incrementContext = createContext();
 export const decrementContext = createContext();
 export const mealsContext = createContext();
 
-const meals = [
+const mealData = [
   {
-    id: "m1",
+    id: 1,
     name: "Sushi",
     description: "Finest fish and veggies",
     price: 22.99,
+    count: 0,
   },
   {
-    id: "m2",
+    id: 2,
     name: "Schnitzel",
     description: "A german specialty!",
     price: 16.5,
+    count: 0,
   },
   {
-    id: "m3",
+    id: 3,
     name: "Barbecue Burger",
     description: "American, raw, meaty",
     price: 12.99,
+    count: 0,
   },
   {
-    id: "m4",
+    id: 4,
     name: "Green Bowl",
     description: "Healthy...and green...",
     price: 18.99,
+    count: 0,
   },
 ];
 
 const App = () => {
-  const [count, setCount] = useState(0);
-
-  const incrementHandler = (id, meal) => {
-    console.log(id, meal.id)
-    if (count < 10 && id === meal.id) {
-      setCount((prevCount) => prevCount + 1);
-    }
+  const [meals, setMeals] = useState(mealData);
+  const incrementHandler = (id) => {
+    setMeals((prevMeals) => {
+      return prevMeals.map((meal) =>
+        meal.id === id && meal.count < 10
+          ? { ...meal, count: meal.count + 1 }
+          : meal
+      );
+    });
   };
-  const decrementHandler = (id, meal) => {
-    if (count > 0 && id === meal.id) {
-      setCount((prevCount) => prevCount - 1);
-    }
+
+  const decrementHandler = (id) => {
+    setMeals((prevMeals) => {
+      return prevMeals.map((meal) =>
+        meal.id === id && meal.count > 0
+          ? { ...meal, count: meal.count - 1 }
+          : meal
+      );
+    });
   };
 
   return (
     <div className="App">
       <mealsContext.Provider value={meals}>
-        <countContext.Provider value={count}>
-          <incrementContext.Provider value={incrementHandler}>
-            <decrementContext.Provider value={decrementHandler}>
-              <Header />
-              <InfoStore />
-              <Meals />
-            </decrementContext.Provider>
-          </incrementContext.Provider>
-        </countContext.Provider>
+        <incrementContext.Provider value={incrementHandler}>
+          <decrementContext.Provider value={decrementHandler}>
+            <Header />
+            <InfoStore />
+            <Meals />
+          </decrementContext.Provider>
+        </incrementContext.Provider>
       </mealsContext.Provider>
     </div>
   );
